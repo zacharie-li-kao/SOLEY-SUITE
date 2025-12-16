@@ -549,7 +549,8 @@ document.getElementById("mailingForm").addEventListener("submit", function(e) {
 
     fetch("https://script.google.com/macros/s/AKfycbxnPnfm9dQ7gbuM36FsPCFwMBXTGhRebwhLdFORpjk2FbboS3GYE8_o-t1PBGBpnTeH2g/exec", {
         method: "POST",
-        body: new FormData(this)
+        body: new FormData(this),
+        mode: "no-cors"
     })
     .then(() => {
         document.getElementById("mailingForm").style.display = "none";
