@@ -261,6 +261,26 @@
             object-fit: contain;
         }
 
+.qr-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .qr-box img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .qr-box span {
+            font-size: 7pt;
+            color: var(--text-light);
+            margin-top: 5px;
+            text-align: center;
+        }
+        
         /* --- Contact Form Section --- */
         .form-section {
             margin-top: 15px;
@@ -452,6 +472,10 @@
 
         <div class="screenshot-section">
             <img src="screenshot.png" alt="SOLEY Software Interface">
+            <div class="qr-box">
+                <img src="qr.png" alt="QR Code">
+                <span>Scan to visit</span>
+            </div>
         </div>
 
         <div class="form-section">
@@ -502,5 +526,6 @@ document.getElementById("mailingForm").addEventListener("submit", function(e) {
 
 </body>
 </html>
+
 
 
