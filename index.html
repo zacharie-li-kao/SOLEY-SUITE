@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLEY - Technical Overview & Licensing</title>
+    <title>SOLEY Suite - Physics-Based PV Yield Engine</title>
     <style>
         :root {
             --primary: #0f172a;
             --accent: #2563eb;
             --accent-light: #eff6ff;
+            --accent-secondary: #059669;
+            --accent-secondary-light: #ecfdf5;
             --text-main: #334155;
             --text-light: #64748b;
             --border: #e2e8f0;
@@ -31,7 +33,6 @@
             padding: 20px;
         }
 
-        /* A4 Paper Dimensions */
         .page {
             width: 210mm;
             height: 297mm;
@@ -48,14 +49,14 @@
         header {
             border-bottom: 2px solid var(--primary);
             padding-bottom: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .brand h1 {
-            font-size: 24pt;
+            font-size: 26pt;
             font-weight: 900;
             color: var(--primary);
             line-height: 0.9;
@@ -65,82 +66,78 @@
             color: var(--accent);
             font-size: 9pt;
             font-weight: 700;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .logo-box {
-            height: 45px;
+            height: 50px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
         }
         .logo-box img { max-height: 100%; max-width: 140px; object-fit: contain; }
 
         /* --- Hero Section --- */
         .hero {
             background: var(--accent-light);
-            padding: 8px 12px;
+            padding: 10px 14px;
             border-radius: 5px;
             border-left: 4px solid var(--accent);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .hero h2 {
-            font-size: 11pt;
+            font-size: 12pt;
             color: var(--accent);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             font-weight: 700;
         }
 
         .hero p {
-            font-size: 8.5pt;
-            line-height: 1.3;
+            font-size: 9pt;
+            line-height: 1.35;
         }
 
         /* --- Problem / Solution Grid --- */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 12px;
+            margin-bottom: 10px;
         }
 
         .box {
             border: 1px solid var(--border);
             border-radius: 5px;
-            padding: 8px 10px;
+            padding: 10px 12px;
         }
 
         .box h3 {
-            font-size: 9pt;
-            margin-bottom: 5px;
+            font-size: 10pt;
+            margin-bottom: 6px;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .box p {
-            font-size: 8pt;
+            font-size: 8.5pt;
             color: var(--text-light);
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
-        /* --- The Schematic --- */
+        /* --- Architecture Schematic --- */
         .schematic-container {
             border: 1px solid var(--border);
             border-radius: 5px;
-            padding: 8px;
+            padding: 10px;
             background: #f8fafc;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .schematic-title {
-            font-size: 8pt;
+            font-size: 9pt;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-align: center;
@@ -169,13 +166,13 @@
             background: white;
             border: 2px solid var(--text-light);
             color: var(--text-main);
-            padding: 5px 6px;
-            border-radius: 4px;
-            font-size: 7pt;
+            padding: 6px 8px;
+            border-radius: 5px;
+            font-size: 7.5pt;
             font-weight: 700;
             z-index: 1;
             text-align: center;
-            width: 75px;
+            width: 80px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
@@ -184,43 +181,145 @@
             background: var(--accent);
             color: white;
             width: 105px;
-            padding: 6px;
         }
 
         .node-sub {
             display: block;
             font-weight: 400;
-            font-size: 6pt;
-            margin-top: 2px;
+            font-size: 6.5pt;
+            margin-top: 3px;
             opacity: 0.9;
             line-height: 1.15;
         }
 
         .arrow {
             color: var(--text-light);
-            font-size: 9px;
+            font-size: 10px;
             z-index: 1;
             background: #f8fafc;
-            padding: 0 2px;
+            padding: 0 3px;
         }
 
-        /* --- Technical Details --- */
-        .tech-grid {
+        /* --- Indoor Feature Highlight --- */
+        .feature-highlight {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
+        .feature-card {
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card.indoor {
+            border-color: var(--accent-secondary);
+        }
+
+        .feature-header {
+            background: var(--primary);
+            color: white;
+            padding: 6px 10px;
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-card.indoor .feature-header {
+            background: var(--accent-secondary);
+        }
+
+        .feature-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .feature-content {
+            padding: 8px 10px;
+            background: #f8fafc;
+        }
+
+        .feature-content p {
+            font-size: 8pt;
+            color: var(--text-light);
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .feature-list-compact {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feature-list-compact li {
+            font-size: 7.5pt;
+            padding-left: 10px;
+            position: relative;
+            line-height: 1.35;
+            margin-bottom: 3px;
+        }
+
+        .feature-list-compact li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .feature-card.indoor .feature-list-compact li::before {
+            color: var(--accent-secondary);
+        }
+
+        .feature-screenshot {
+            width: 100%;
+            flex: 1;
+            min-height: 80px;
+            object-fit: contain;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        /* --- Three Column Tech Grid --- */
+        .tech-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .tech-section {
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 10px;
         }
 
         .tech-section h3 {
             font-size: 9pt;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 3px;
-            margin-bottom: 6px;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
+
+        .tech-section.education { border-top: 3px solid var(--accent); }
+        .tech-section.research { border-top: 3px solid #8b5cf6; }
+        .tech-section.industry { border-top: 3px solid var(--accent-secondary); }
 
         .feature-list {
             list-style: none;
@@ -228,10 +327,10 @@
 
         .feature-list li {
             font-size: 7.5pt;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             padding-left: 10px;
             position: relative;
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
         .feature-list li::before {
@@ -242,32 +341,15 @@
             left: 0;
         }
 
-        /* --- Screenshot Section --- */
-        .screenshot-section {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            overflow: hidden;
-            background: #f8fafc;
-            min-height: 0;
-        }
-
-        .screenshot-section img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
+        .tech-section.research .feature-list li::before { color: #8b5cf6; }
+        .tech-section.industry .feature-list li::before { color: var(--accent-secondary); }
 
         /* --- CTA Section --- */
         .cta-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 6px;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
         .cta-card {
@@ -283,11 +365,11 @@
         .cta-header {
             background: var(--primary);
             color: white;
-            padding: 6px 10px;
-            font-size: 8pt;
+            padding: 8px 10px;
+            font-size: 9pt;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
         }
 
         .cta-card.primary .cta-header {
@@ -295,17 +377,17 @@
         }
 
         .cta-content {
-            padding: 8px;
+            padding: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: #f8fafc;
             overflow: hidden;
         }
 
         .qr-code {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             flex-shrink: 0;
         }
 
@@ -322,50 +404,46 @@
         }
 
         .cta-text p {
-            font-size: 7pt;
+            font-size: 8pt;
             color: var(--text-light);
-            line-height: 1.25;
-            margin-bottom: 3px;
+            line-height: 1.3;
+            margin-bottom: 4px;
         }
 
         .cta-text a {
             color: var(--accent);
             font-weight: 600;
             text-decoration: none;
-            font-size: 6.5pt;
+            font-size: 7.5pt;
             word-break: break-all;
-        }
-
-        .cta-text a:hover {
-            text-decoration: underline;
         }
 
         /* --- Mailing Form --- */
         .mini-form {
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 4px;
         }
 
         .mini-form .form-row {
             display: flex;
-            gap: 3px;
+            gap: 4px;
             flex-wrap: wrap;
         }
 
         .mini-form input[type="email"],
         .mini-form input[type="text"] {
             flex: 1 1 45%;
-            padding: 3px 5px;
-            font-size: 6.5pt;
+            padding: 4px 6px;
+            font-size: 7pt;
             border: 1px solid var(--border);
             border-radius: 3px;
             min-width: 50px;
         }
 
         .mini-form button {
-            padding: 3px 6px;
-            font-size: 6.5pt;
+            padding: 4px 8px;
+            font-size: 7pt;
             font-weight: 700;
             background: var(--accent);
             color: white;
@@ -378,9 +456,9 @@
         /* --- Footer --- */
         footer {
             border-top: 1px solid var(--border);
-            padding-top: 5px;
+            padding-top: 8px;
             text-align: center;
-            font-size: 6.5pt;
+            font-size: 7pt;
             color: var(--text-light);
             line-height: 1.4;
         }
@@ -420,7 +498,7 @@
 
         <header>
             <div class="brand">
-                <h1>SOLEY</h1>
+                <h1>SOLEY Suite</h1>
                 <span>Physics-Based PV Yield Engine</span>
             </div>
             <div class="logo-box">
@@ -429,9 +507,10 @@
         </header>
 
         <section class="hero">
-            <h2>From Nanometers to Gigawatts</h2>
+            <h2>From Nanometers to Gigawatts — Outdoors and Indoors</h2>
             <p>
-                The first photovoltaic software that bridges <strong>atomic-scale device physics</strong> and <strong>utility-scale energy yield</strong>. Simulate the annual production of theoretical devices (Perovskites, Tandems) with the same speed as commercial silicon tools.
+                The first photovoltaic software bridging <strong>atomic-scale device physics</strong> and <strong>real-world energy yield</strong>.
+                Simulate annual production of theoretical devices (Perovskites, Tandems, OPV) for both <strong>outdoor utility-scale</strong> and <strong>indoor ambient light</strong> applications.
             </p>
         </section>
 
@@ -439,35 +518,35 @@
             <div class="box">
                 <h3>The Gap</h3>
                 <p>
-                    <strong>Device Simulators</strong> (e.g., SCAPS) are physically accurate but too slow for annual simulations.<br><br>
-                    <strong>Yield Simulators</strong> (e.g., PVsyst) are fast but empirical—they require a datasheet of an existing panel. You cannot simulate what you haven't built.
+                    <strong>Device Simulators</strong> (SCAPS, etc.) are accurate but too slow for annual yield.<br>
+                    <strong>Yield Simulators</strong> (PVsyst, etc.) require existing panel datasheets — you cannot simulate what you haven't built.
                 </p>
             </div>
             <div class="box">
                 <h3>The SOLEY Bridge</h3>
                 <p>
-                    SOLEY uses <strong>Bottom-Up Logic</strong>. It calculates Optical Absorption (A) and solves Detailed Balance for every timestep.<br><br>
-                    <strong>Result:</strong> Change a layer thickness by 10nm and immediately see the impact on LCOE and Annual Yield (kWh).
+                    SOLEY uses <strong>Bottom-Up Logic</strong>: calculates Optical Absorption via TMM and solves Detailed Balance for every timestep.<br>
+                    <strong>Result:</strong> Change a layer by 10nm and see the impact on Annual Yield (kWh) and LCOE instantly.
                 </p>
             </div>
         </section>
 
         <section class="schematic-container">
-            <div class="schematic-title">Core Logic Architecture</div>
+            <div class="schematic-title">Core Architecture — Unified Physics Engine</div>
             <div class="pipeline">
                 <div class="node">
                     INPUTS
-                    <span class="node-sub">Meteo Data<br>Layer Stack (n,k)</span>
+                    <span class="node-sub">Meteo / Lux Data<br>Layer Stack (n,k)</span>
                 </div>
                 <div class="arrow">▶</div>
                 <div class="node core">
-                    TMM CACHE
-                    <span class="node-sub">Pre-computed Optics<br>(0-90°, Polarization)<br>+ Scattering</span>
+                    TMM + CACHE
+                    <span class="node-sub">Pre-computed Optics<br>Light Trapping<br>Angular Response</span>
                 </div>
                 <div class="arrow">▶</div>
                 <div class="node core">
-                    PARALLEL SOLVER
-                    <span class="node-sub">Perez Sky Model<br>Detailed Balance<br>Thermodynamics</span>
+                    PHYSICS SOLVER
+                    <span class="node-sub">Perez / Room Model<br>Detailed Balance<br>Thermodynamics</span>
                 </div>
                 <div class="arrow">▶</div>
                 <div class="node" style="border-color: var(--primary);">
@@ -477,29 +556,69 @@
             </div>
         </section>
 
-        <section class="tech-grid">
-            <div class="tech-section">
+        <!-- Dual Feature Highlight: Outdoor + Indoor -->
+        <section class="feature-highlight">
+            <div class="feature-card">
+                <div class="feature-header">
+                    Outdoor Simulation
+                </div>
+                <div class="feature-content">
+                    <p>Full utility-scale PV modeling with real meteorological data, tracking systems, and environmental losses.</p>
+                    <ul class="feature-list-compact">
+                        <li>Perez sky model with spectral decomposition</li>
+                        <li>1-axis / 2-axis tracking support</li>
+                        <li>Soiling, shading, and aging models</li>
+                        <li>LCOE and bankability metrics</li>
+                    </ul>
+                </div>
+                <img src="screenshot.png" alt="Outdoor Simulation" class="feature-screenshot">
+            </div>
+            <div class="feature-card indoor">
+                <div class="feature-header">
+                    Indoor Simulation
+                </div>
+                <div class="feature-content">
+                    <p><strong>World's first physics-based indoor PV yield tool.</strong> Realistic room model with view factors and fixture-specific light distribution.</p>
+                    <ul class="feature-list-compact">
+                        <li>View-factor based diffuse light model</li>
+                        <li>Anisotropic fixture profiles (LED, fluorescent)</li>
+                        <li>Window daylight with spectral transmission</li>
+                        <li>Position-dependent irradiance mapping</li>
+                    </ul>
+                </div>
+                <img src="screenshot2.png" alt="Indoor Simulation" class="feature-screenshot">
+            </div>
+        </section>
+
+        <!-- Three-Column: Education / Research / Industry -->
+        <section class="tech-grid-3">
+            <div class="tech-section education">
                 <h3>For Education</h3>
                 <ul class="feature-list">
-                    <li><strong>Beyond "Efficiency":</strong> Teaches students that efficiency is dynamic, not a static datasheet number.</li>
-                    <li><strong>Full Transparency:</strong> Trace the logic from Maxwell's Equations (TMM) to Grid Injection.</li>
-                    <li><strong>Geography Matters:</strong> Same roughness yields different results in London (diffuse) vs Cairo (direct).</li>
+                    <li><strong>Beyond Datasheets:</strong> Students learn efficiency is dynamic, varying with spectrum and temperature.</li>
+                    <li><strong>Full Transparency:</strong> Trace physics from Maxwell's equations (TMM) to grid injection.</li>
+                    <li><strong>Geography Matters:</strong> Same cell yields different results in London vs. Cairo.</li>
                 </ul>
             </div>
-            <div class="tech-section">
+            <div class="tech-section research">
+                <h3>For Research</h3>
+                <ul class="feature-list">
+                    <li><strong>Novel Architectures:</strong> Simulate Perovskites, Tandems, OPV, and quantum dots before fabrication.</li>
+                    <li><strong>Indoor PV R&D:</strong> First tool to predict indoor harvesting performance from device physics.</li>
+                    <li><strong>Publication-Ready:</strong> Export spectral data, JV curves, and generation profiles.</li>
+                </ul>
+            </div>
+            <div class="tech-section industry">
                 <h3>For Industry</h3>
                 <ul class="feature-list">
-                    <li><strong>Tandem Optimization:</strong> Recalculates current matching for every hour based on the real solar spectrum (Red/Blue ratio).</li>
-                    <li><strong>"Fail Fast":</strong> Simulate 1,000 coating variations in software before fabricating a single physical prototype.</li>
-                    <li><strong>Production Ready:</strong> Includes real-world losses: Shading, Soiling, Aging, and Tracking (1-axis/2-axis).</li>
+                    <li><strong>Tandem Optimization:</strong> Current-matching recalculated hourly based on real spectrum.</li>
+                    <li><strong>Fail Fast:</strong> Test 1,000+ coating variations in software before fabrication.</li>
+                    <li><strong>Production Ready:</strong> Real-world losses: soiling, shading, aging, tracking.</li>
                 </ul>
             </div>
         </section>
 
-        <div class="screenshot-section">
-            <img src="screenshot.png" alt="SOLEY Software Interface">
-        </div>
-
+        <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-card primary">
                 <div class="cta-header">Try Free Academic Version</div>
@@ -508,7 +627,7 @@
                         <img src="qr2.png" alt="QR Code - Free Version">
                     </div>
                     <div class="cta-text">
-                        <p>Access the full Academic version for free. Ideal for students, researchers, and educators.</p>
+                        <p>Full Academic version free for students, researchers, and educators.</p>
                         <a href="https://zacharie-li-kao.github.io/SOLEY-PV/" target="_blank">zacharie-li-kao.github.io/SOLEY-PV</a>
                     </div>
                 </div>
@@ -520,7 +639,7 @@
                         <img src="qr.png" alt="QR Code - Contact">
                     </div>
                     <div class="cta-text">
-                        <p>Join the mailing list for updates on new features and professional licensing.</p>
+                        <p>Join for updates on new features and professional licensing.</p>
                         <form id="mailingForm" class="mini-form">
                             <div class="form-row">
                                 <input type="text" name="name" placeholder="Name (optional)">
@@ -532,7 +651,7 @@
                                 <button type="submit">Subscribe</button>
                             </div>
                         </form>
-                        <p id="formMsg" style="display:none;margin-top:4px;color:var(--accent);">
+                        <p id="formMsg" style="display:none;margin-top:3px;color:var(--accent);font-size:6pt;">
                             Subscribed successfully!
                         </p>
                     </div>
@@ -541,8 +660,8 @@
         </section>
 
         <footer>
-            SOLEY Suite · Transfer Matrix Method with Light Trapping · Extended Detailed Balance · Perez Irradiance Model · Multiprocessing Enabled<br>
-            Runs locally on client hardware (No cloud data transfer) · Windows 10/11, MacOS X or Linux · 8GB RAM · Multi-core CPU recommended
+            SOLEY Suite · Transfer Matrix Method with Light Trapping · Extended Detailed Balance · Perez Irradiance Model · View-Factor Room Physics · Multiprocessing<br>
+            Runs locally (no cloud) · Windows 10/11, macOS, Linux · 8GB RAM · Multi-core CPU recommended
         </footer>
 
     </div>
@@ -566,4 +685,3 @@ document.getElementById("mailingForm").addEventListener("submit", function(e) {
 
 </body>
 </html>
-
