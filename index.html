@@ -36,7 +36,7 @@
             width: 210mm;
             height: 297mm;
             background: white;
-            padding: 12mm 14mm;
+            padding: 10mm 12mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
             display: flex;
@@ -47,15 +47,15 @@
         /* --- Header --- */
         header {
             border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .brand h1 {
-            font-size: 26pt;
+            font-size: 24pt;
             font-weight: 900;
             color: var(--primary);
             line-height: 0.9;
@@ -63,84 +63,84 @@
 
         .brand span {
             color: var(--accent);
-            font-size: 10pt;
+            font-size: 9pt;
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
         }
 
         .logo-box {
-            height: 50px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: flex-end;
         }
-        .logo-box img { max-height: 100%; max-width: 150px; object-fit: contain; }
+        .logo-box img { max-height: 100%; max-width: 140px; object-fit: contain; }
 
         /* --- Hero Section --- */
         .hero {
             background: var(--accent-light);
-            padding: 10px 14px;
-            border-radius: 6px;
-            border-left: 5px solid var(--accent);
-            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 8px;
         }
 
         .hero h2 {
-            font-size: 12pt;
+            font-size: 11pt;
             color: var(--accent);
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             font-weight: 700;
         }
 
         .hero p {
-            font-size: 9pt;
-            line-height: 1.35;
+            font-size: 8.5pt;
+            line-height: 1.3;
         }
 
         /* --- Problem / Solution Grid --- */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 8px;
         }
 
         .box {
             border: 1px solid var(--border);
             border-radius: 5px;
-            padding: 10px;
+            padding: 8px 10px;
         }
 
         .box h3 {
-            font-size: 10pt;
-            margin-bottom: 6px;
+            font-size: 9pt;
+            margin-bottom: 5px;
             color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .box p {
-            font-size: 8.5pt;
+            font-size: 8pt;
             color: var(--text-light);
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         /* --- The Schematic --- */
         .schematic-container {
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 10px;
+            border-radius: 5px;
+            padding: 8px;
             background: #f8fafc;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .schematic-title {
-            font-size: 9pt;
+            font-size: 8pt;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-align: center;
@@ -169,13 +169,13 @@
             background: white;
             border: 2px solid var(--text-light);
             color: var(--text-main);
-            padding: 6px 8px;
-            border-radius: 5px;
-            font-size: 7.5pt;
+            padding: 5px 6px;
+            border-radius: 4px;
+            font-size: 7pt;
             font-weight: 700;
             z-index: 1;
             text-align: center;
-            width: 80px;
+            width: 75px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
@@ -183,40 +183,40 @@
             border-color: var(--accent);
             background: var(--accent);
             color: white;
-            width: 115px;
-            padding: 8px;
+            width: 105px;
+            padding: 6px;
         }
 
         .node-sub {
             display: block;
             font-weight: 400;
-            font-size: 6.5pt;
-            margin-top: 3px;
+            font-size: 6pt;
+            margin-top: 2px;
             opacity: 0.9;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
         .arrow {
             color: var(--text-light);
-            font-size: 10px;
+            font-size: 9px;
             z-index: 1;
             background: #f8fafc;
-            padding: 0 3px;
+            padding: 0 2px;
         }
 
         /* --- Technical Details --- */
         .tech-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 10px;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
         .tech-section h3 {
-            font-size: 10pt;
+            font-size: 9pt;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 4px;
-            margin-bottom: 8px;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -227,11 +227,11 @@
         }
 
         .feature-list li {
-            font-size: 8pt;
-            margin-bottom: 5px;
-            padding-left: 12px;
+            font-size: 7.5pt;
+            margin-bottom: 4px;
+            padding-left: 10px;
             position: relative;
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         .feature-list li::before {
@@ -248,11 +248,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 5px;
             overflow: hidden;
             background: #f8fafc;
+            min-height: 0;
         }
 
         .screenshot-section img {
@@ -261,102 +262,123 @@
             object-fit: contain;
         }
 
-.qr-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
+        /* --- CTA Section --- */
+        .cta-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 6px;
         }
 
-        .qr-box img {
-            width: 80px;
-            height: 80px;
-        }
-
-        .qr-box span {
-            font-size: 7pt;
-            color: var(--text-light);
-            margin-top: 5px;
-            text-align: center;
-        }
-        
-        /* --- Contact Form Section --- */
-        .form-section {
-            margin-top: 15px;
+        .cta-card {
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 5px;
             overflow: hidden;
         }
 
-        .form-header {
-            background: var(--accent);
+        .cta-card.primary {
+            border-color: var(--accent);
+        }
+
+        .cta-header {
+            background: var(--primary);
             color: white;
-            padding: 8px 12px;
-            font-size: 9pt;
+            padding: 6px 10px;
+            font-size: 8pt;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .form-container {
-            background: #f8fafc;
-            padding: 12px;
+        .cta-card.primary .cta-header {
+            background: var(--accent);
         }
 
+        .cta-content {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8fafc;
+        }
+
+        .qr-code {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cta-text {
+            flex: 1;
+        }
+
+        .cta-text p {
+            font-size: 7.5pt;
+            color: var(--text-light);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .cta-text a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 7.5pt;
+            word-break: break-all;
+        }
+
+        .cta-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Mailing Form --- */
         .mini-form {
             display: flex;
-            gap: 8px;
-            align-items: center;
+            flex-direction: column;
+            gap: 4px;
         }
 
-        .mini-form input[type="email"] {
+        .mini-form .form-row {
+            display: flex;
+            gap: 4px;
+        }
+
+        .mini-form input[type="email"],
+        .mini-form input[type="text"] {
             flex: 1;
-            padding: 6px 8px;
-            font-size: 8pt;
+            padding: 4px 6px;
+            font-size: 7pt;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 3px;
+            min-width: 0;
         }
 
         .mini-form button {
-            padding: 6px 12px;
-            font-size: 8pt;
+            padding: 4px 8px;
+            font-size: 7pt;
             font-weight: 700;
             background: var(--accent);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 3px;
             cursor: pointer;
-        }
-
-        .cta-box {
-            margin-top: 12px;
-            background: var(--accent-light);
-            border: 1px solid var(--accent);
-            border-radius: 6px;
-            padding: 10px 14px;
-            font-size: 9pt;
-            text-align: center;
-        }
-
-        .cta-box a {
-            color: var(--accent);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .cta-box a:hover {
-            text-decoration: underline;
+            white-space: nowrap;
         }
 
         /* --- Footer --- */
         footer {
-            margin-top: 8px;
             border-top: 1px solid var(--border);
-            padding-top: 6px;
+            padding-top: 5px;
             text-align: center;
-            font-size: 7pt;
+            font-size: 6.5pt;
             color: var(--text-light);
+            line-height: 1.4;
         }
 
         /* --- Export Button --- */
@@ -391,7 +413,7 @@
     <button class="fab" onclick="window.print()">Save as PDF</button>
 
     <div class="page">
-        
+
         <header>
             <div class="brand">
                 <h1>SOLEY</h1>
@@ -411,14 +433,14 @@
 
         <section class="grid-2">
             <div class="box">
-                <h3>🚫 The Gap</h3>
+                <h3>The Gap</h3>
                 <p>
                     <strong>Device Simulators</strong> (e.g., SCAPS) are physically accurate but too slow for annual simulations.<br><br>
                     <strong>Yield Simulators</strong> (e.g., PVsyst) are fast but empirical—they require a datasheet of an existing panel. You cannot simulate what you haven't built.
                 </p>
             </div>
             <div class="box">
-                <h3>✅ The SOLEY Bridge</h3>
+                <h3>The SOLEY Bridge</h3>
                 <p>
                     SOLEY uses <strong>Bottom-Up Logic</strong>. It calculates Optical Absorption (A) and solves Detailed Balance for every timestep.<br><br>
                     <strong>Result:</strong> Change a layer thickness by 10nm and immediately see the impact on LCOE and Annual Yield (kWh).
@@ -472,34 +494,51 @@
 
         <div class="screenshot-section">
             <img src="screenshot.png" alt="SOLEY Software Interface">
-            <div class="qr-box">
-                <img src="qr.png" alt="QR Code">
-                <span>Scan to visit</span>
-            </div>
         </div>
 
-        <div class="form-section">
-            <div class="form-header">Stay Informed — Join the Mailing List</div>
-            <div class="form-container">
-                <form id="mailingForm" class="mini-form">
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                    <!-- Honeypot field -->
-                    <input type="text" name="company" style="display:none">
-                    <button type="submit">Notify me</button>
-                </form>
-                <p id="formMsg" style="display:none;font-size:8pt;color:var(--text-light);margin-top:6px;">
-                    Thank you. You will be notified at release.
-                </p>
+        <section class="cta-section">
+            <div class="cta-card primary">
+                <div class="cta-header">Try Free Academic Version</div>
+                <div class="cta-content">
+                    <div class="qr-code">
+                        <img src="qr2.png" alt="QR Code - Free Version">
+                    </div>
+                    <div class="cta-text">
+                        <p>Access the full Academic version for free. Ideal for students, researchers, and educators.</p>
+                        <a href="https://zacharie-li-kao.github.io/SOLEY-PV/" target="_blank">zacharie-li-kao.github.io/SOLEY-PV</a>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="cta-box">
-            <strong>Try SOLEY Now:</strong> The Academic version is available for free at <a href="https://zacharie-li-kao.github.io/SOLEY-PV/" target="_blank">zacharie-li-kao.github.io/SOLEY-PV</a>
-        </div>
+            <div class="cta-card">
+                <div class="cta-header">Stay Informed</div>
+                <div class="cta-content">
+                    <div class="qr-code">
+                        <img src="qr.png" alt="QR Code - Contact">
+                    </div>
+                    <div class="cta-text">
+                        <p>Join the mailing list for updates on new features and professional licensing.</p>
+                        <form id="mailingForm" class="mini-form">
+                            <div class="form-row">
+                                <input type="text" name="name" placeholder="Name (optional)">
+                                <input type="text" name="affiliation" placeholder="Affiliation (optional)">
+                            </div>
+                            <div class="form-row">
+                                <input type="email" name="email" placeholder="Email" required>
+                                <input type="text" name="company" style="display:none">
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                        <p id="formMsg" style="display:none;margin-top:4px;color:var(--accent);">
+                            Subscribed successfully!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer>
             SOLEY v1.0 · Python 3.10+ · Transfer Matrix Method (TMM) · Extended Detailed Balance · Perez Irradiance Model · Multiprocessing Enabled<br>
-            Runs locally on client hardware (No cloud data transfer) · System Requirements: Windows 10/11 or Linux, 8GB RAM, Multi-core CPU recommended
+            Runs locally on client hardware (No cloud data transfer) · Windows 10/11 or Linux · 8GB RAM · Multi-core CPU recommended
         </footer>
 
     </div>
@@ -508,24 +547,17 @@
 document.getElementById("mailingForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    fetch("https://script.google.com/macros/s/AKfycby1uyJpxP03lsfEPEKjzkXFtymClP5gcnt7m5xfozkVuB0f-4rg4IwklpSI8G0ACgpd3g/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxnPnfm9dQ7gbuM36FsPCFwMBXTGhRebwhLdFORpjk2FbboS3GYE8_o-t1PBGBpnTeH2g/exec", {
         method: "POST",
-        mode: "no-cors",
         body: new FormData(this)
     })
     .then(() => {
         document.getElementById("mailingForm").style.display = "none";
         document.getElementById("formMsg").style.display = "block";
     })
-    .catch((err) => {
-        console.error(err);
-        alert("Submission failed.");
-    });
+    .catch(() => alert("Submission failed."));
 });
 </script>
 
 </body>
 </html>
-
-
-
